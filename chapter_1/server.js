@@ -12,11 +12,11 @@ app.get("/", (req, res) => {
 //route
 app.get("/dashboard", (req, res) => {
   console.log("Dashboard route accessed", req.method);
-
   res.send("Hello! Welcome to our backend system...");
 });
 
-app.post("/api/data", () => {
+app.post("/api/data", (req, res) => {
+  const newEntry = req.body;
   res.statusCode(201);
   console.log("User created");
 });
