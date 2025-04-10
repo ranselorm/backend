@@ -16,7 +16,10 @@ app.get("/dashboard", (req, res) => {
   res.send("Hello! Welcome to our backend system...");
 });
 
-console.log("hello");
+app.post("/api/data", () => {
+  res.statusCode(201);
+  console.log("User created");
+});
 
 app.listen(PORT, () => {
   console.log(`Server has started on: ${PORT}`);
