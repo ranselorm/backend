@@ -4,10 +4,10 @@ dotenv.config();
 import express from "express";
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 8000;
 
 const data = ["james"];
-//
+
 app.use(express.json());
 
 app.get("/", (req, res) => {
@@ -25,11 +25,9 @@ app.get("/api/data", (req, res) => {
 
 app.post("/api/data", (req, res) => {
   const newEntry = req.body;
-  console.log(newEntry);
   newEntry.name === "Randy"
     ? data.push(newEntry.name)
     : res.status(400).json({ message: "Name must be Randy" });
-  // data.pop();
 
   res.status(201).json({ message: "User created", data });
 });
