@@ -25,7 +25,11 @@ app.get("/api/data", (req, res) => {
 app.post("/api/data", (req, res) => {
   const newEntry = req.body;
   console.log(newEntry);
-  data.push(newEntry.name);
+  newEntry.name === "Randy"
+    ? data.push(newEntry.name)
+    : res.status(400).json({ message: "Name must be Randy" });
+  // data.pop();
+
   res.status(201).json({ message: "User created", data });
 });
 
