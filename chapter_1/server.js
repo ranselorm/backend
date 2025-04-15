@@ -1,6 +1,8 @@
 import express from "express";
 const app = express();
 const PORT = 5000;
+// const bodyParser = require("body-parser");
+import bodyParser from "body-parser";
 
 const data = ["james"];
 
