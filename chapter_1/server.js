@@ -1,19 +1,18 @@
+// server.js
 import express from "express";
+
 const app = express();
 const PORT = 5000;
-// const bodyParser = require("body-parser");
-import bodyParser from "body-parser";
 
 const data = ["james"];
 
-//middleware
-// app.use(express.json());
+// Built-in JSON middleware
+app.use(express.json());
 
-//route
 app.get("/", (req, res) => {
   res.send("Hello! Welcome to our backend system...");
 });
-//route
+
 app.get("/dashboard", (req, res) => {
   console.log("Dashboard route accessed", req.method);
   res.send("Hello! Welcome to our backend system...");
@@ -26,10 +25,8 @@ app.get("/api/data", (req, res) => {
 app.post("/api/data", (req, res) => {
   const newEntry = req.body;
   console.log(newEntry);
-  // const user = data.push(newEntry.name);
-  // res.json(user);
-  // res.statusCode(201);
-  console.log("User created");
+  data.push(newEntry.name);
+  res.status(201).json({ message: "User created", data });
 });
 
 app.listen(PORT, () => {
