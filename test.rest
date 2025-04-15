@@ -1,0 +1,11 @@
+### TEST GET
+GET http://localhost:5000/api/data
+
+### TEST POST
+
+POST http://localhost:5000/api/data
+Content-Type: application/json
+
+{
+  "name": "Randy",
+}
