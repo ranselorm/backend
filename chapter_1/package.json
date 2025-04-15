@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server.js",
+    "dev": "node --watch --experimental-strip-types --experimental-sqlite ./src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -13,6 +13,7 @@
   "description": "A fullstack todo appplication with nodejs and sqlite database",
   "dependencies": {
     "bcryptjs": "^3.0.2",
+    "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2"
   },

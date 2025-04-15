@@ -1,12 +1,13 @@
-// server.js
+import dotenv from "dotenv";
+dotenv.config();
+
 import express from "express";
 
 const app = express();
 const PORT = 5000;
 
 const data = ["james"];
-
-// Built-in JSON middleware
+//
 app.use(express.json());
 
 app.get("/", (req, res) => {
