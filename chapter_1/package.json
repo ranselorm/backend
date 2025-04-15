@@ -10,9 +10,11 @@
   "author": "",
   "license": "ISC",
   "type": "module",
-  "description": "",
+  "description": "A fullstack todo appplication with nodejs and sqlite database",
   "dependencies": {
-    "express": "^5.1.0"
+    "bcryptjs": "^3.0.2",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2"
   },
   "devDependencies": {
     "nodemon": "^3.1.9"
